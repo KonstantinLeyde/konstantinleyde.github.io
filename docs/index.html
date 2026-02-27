@@ -11,8 +11,8 @@
 
   body {
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-    background: #0a0a0f;
-    color: #e0e0e8;
+    background: #f8f9fc;
+    color: #2a2a3a;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -26,31 +26,56 @@
   }
 
   .header h1 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     font-weight: normal;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-    background: linear-gradient(135deg, #a78bfa, #60a5fa, #34d399);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+    color: #1a3a6e;
+    margin-bottom: 8px;
   }
 
   .header p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #888;
     font-weight: normal;
     font-style: italic;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
 
+  .bio {
+    font-size: 1.05rem;
+    color: #5a6478;
+    font-weight: normal;
+    font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
+    margin-top: 6px;
+  }
+
+  .bio-link {
+    color: #2a6cb8;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(42, 108, 184, 0.3);
+    transition: border-color 0.2s ease;
+  }
+
+  .bio-link:hover {
+    border-bottom-color: #2a6cb8;
+  }
+
+  .accent-line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #c0392b, #2a6cb8);
+    border-radius: 2px;
+    margin: 16px auto 0;
+  }
+
   .table-container {
     width: 100%;
     max-width: 750px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e6ee;
+    border-radius: 14px;
     overflow: hidden;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 24px rgba(30, 60, 120, 0.06), 0 1px 4px rgba(0,0,0,0.03);
   }
 
   table {
@@ -66,9 +91,9 @@
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #666;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.02);
+    color: #9aa3b3;
+    border-bottom: 1px solid #eef0f5;
+    background: #fbfcfe;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
 
@@ -78,42 +103,42 @@
   }
 
   tbody tr:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: #f0f4fa;
   }
 
   tbody tr:not(:last-child) td {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid #f0f2f7;
   }
 
   tbody td {
-    padding: 18px 24px;
+    padding: 20px 24px;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
 
   .project-name {
     font-weight: normal;
-    font-size: 1.05rem;
-    color: #e0e0e8;
+    font-size: 1.08rem;
+    color: #1e2a40;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
 
   .project-name .icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     flex-shrink: 0;
   }
 
   .project-desc {
-    font-size: 0.9rem;
-    color: #777;
+    font-size: 0.92rem;
+    color: #7a8399;
     font-weight: normal;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
@@ -122,20 +147,22 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #60a5fa;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: normal;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-    padding: 6px 14px;
+    padding: 7px 16px;
     border-radius: 8px;
-    border: 1px solid rgba(96, 165, 250, 0.2);
-    transition: all 0.2s ease;
+    background: linear-gradient(135deg, #c0392b, #2a6cb8);
+    border: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(42, 108, 184, 0.18);
   }
 
   .visit-link:hover {
-    background: rgba(96, 165, 250, 0.1);
-    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow: 0 4px 14px rgba(42, 108, 184, 0.3);
+    transform: translateY(-1px);
   }
 
   .visit-link svg {
@@ -150,36 +177,70 @@
 
   .footer {
     margin-top: 40px;
-    color: #444;
+    color: #b0b8c8;
     font-size: 0.85rem;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
 
   /* Color themes for icons */
-  .bg-purple { background: rgba(167, 139, 250, 0.15); color: #a78bfa; }
-  .bg-blue   { background: rgba(96, 165, 250, 0.15);  color: #60a5fa; }
-  .bg-green  { background: rgba(52, 211, 153, 0.15);  color: #34d399; }
-  .bg-amber  { background: rgba(251, 191, 36, 0.15);  color: #fbbf24; }
-  .bg-rose   { background: rgba(251, 113, 133, 0.15); color: #fb7185; }
+  .bg-red  { background: rgba(192, 57, 43, 0.1); color: #c0392b; }
+  .bg-blue { background: rgba(42, 108, 184, 0.1); color: #2a6cb8; }
+  .bg-teal { background: rgba(22, 160, 133, 0.1); color: #16a085; }
+  .bg-navy { background: rgba(26, 58, 110, 0.1);  color: #1a3a6e; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>Konstantin Leyde</h1>
-  <p>Projects & Websites</p>
+  <p class="bio">Flatiron Research Fellow at the <a href="https://www.simonsfoundation.org/people/konstantin-leyde/" target="_blank" class="bio-link">Center for Computational Astrophysics</a>, New York</p>
+  <div class="accent-line"></div>
+  <p style="margin-top:20px; font-style:italic; color:#888; font-size:1.05rem;">Projects & Websites</p>
 </div>
 
 <div class="table-container">
   <table>
     <thead>
       <tr>
+        <th colspan="3" style="font-size:0.95rem; color:#1a3a6e; letter-spacing:0; text-transform:none; padding-bottom:10px;">Websites</th>
+      </tr>
+      <tr>
         <th>Project</th>
         <th>Description</th>
         <th></th>
       </tr>
     </thead>
-    <tbody id="project-table">
+    <tbody id="websites-table">
+    </tbody>
+  </table>
+
+  <table style="margin-top:8px;">
+    <thead>
+      <tr>
+        <th colspan="3" style="font-size:0.95rem; color:#1a3a6e; letter-spacing:0; text-transform:none; padding-bottom:10px; border-top:1px solid #eef0f5;">Repositories</th>
+      </tr>
+      <tr>
+        <th>Project</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="repos-table">
+    </tbody>
+  </table>
+
+  <table style="margin-top:8px;">
+    <thead>
+      <tr>
+        <th colspan="3" style="font-size:0.95rem; color:#1a3a6e; letter-spacing:0; text-transform:none; padding-bottom:10px; border-top:1px solid #eef0f5;">Links</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="links-table">
     </tbody>
   </table>
 </div>
@@ -192,55 +253,73 @@
   // =====================================================
   // ✏️  EDIT THIS ARRAY TO ADD / REMOVE WEBSITES
   // =====================================================
-  const projects = [
+  const websites = [
     {
       name: "GWTC-4 Catalog",
       description: "Gravitational-wave transient catalog browser",
       url: "https://konstantinleyde.github.io/website_gwtc_4_catalog/",
       icon: "🌌",
-      color: "bg-purple"
+      color: "bg-navy"
     },
     {
       name: "Cholesky Decomposition",
       description: "Interactive visualization of Cholesky decomposition",
       url: "https://konstantinleyde.github.io/choleski-decomposition-visualization/",
       icon: "📐",
+      color: "bg-red"
+    },
+  ];
+
+  const repos = [
+    {
+      name: "light",
+      description: "Bayesian reconstruction of the galaxy field for gravitational-wave cosmology",
+      url: "https://github.com/KonstantinLeyde/light",
+      icon: "🌀",
       color: "bg-blue"
     },
-    // Add more like this:
+  ];
+
+  const links = [
+    // Add external links here:
     // {
-    //   name: "My New Site",
-    //   description: "A short description",
-    //   url: "https://konstantinleyde.github.io/repo-name/",
-    //   icon: "🚀",
-    //   color: "bg-amber"
+    //   name: "Example",
+    //   description: "Description",
+    //   url: "https://example.com",
+    //   icon: "🔗",
+    //   color: "bg-teal"
     // },
   ];
 
-  const tbody = document.getElementById("project-table");
+  function populateTable(tableId, items) {
+    const tbody = document.getElementById(tableId);
+    items.forEach(p => {
+      const tr = document.createElement("tr");
+      tr.onclick = () => window.open(p.url, "_blank");
+      tr.innerHTML = `
+        <td>
+          <div class="project-name">
+            <div class="icon ${p.color}">${p.icon}</div>
+            ${p.name}
+          </div>
+        </td>
+        <td class="project-desc">${p.description}</td>
+        <td style="text-align:right">
+          <a href="${p.url}" target="_blank" class="visit-link" onclick="event.stopPropagation()">
+            Visit
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
 
-  projects.forEach(p => {
-    const tr = document.createElement("tr");
-    tr.onclick = () => window.open(p.url, "_blank");
-    tr.innerHTML = `
-      <td>
-        <div class="project-name">
-          <div class="icon ${p.color}">${p.icon}</div>
-          ${p.name}
-        </div>
-      </td>
-      <td class="project-desc">${p.description}</td>
-      <td style="text-align:right">
-        <a href="${p.url}" target="_blank" class="visit-link" onclick="event.stopPropagation()">
-          Visit
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-          </svg>
-        </a>
-      </td>
-    `;
-    tbody.appendChild(tr);
-  });
+  populateTable("websites-table", websites);
+  populateTable("repos-table", repos);
+  populateTable("links-table", links);
 </script>
 </body>
 </html>
