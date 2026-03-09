@@ -11,182 +11,153 @@
 
   body {
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-    background: #f8f9fc;
-    color: #2a2a3a;
+    background: #f7f7f6;
+    color: #1f2328;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 20px;
+    padding: 48px 20px;
   }
 
   .header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
   }
 
   .header h1 {
-    font-size: 2.6rem;
+    font-size: 2.3rem;
     font-weight: normal;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-    color: #1a3a6e;
-    margin-bottom: 8px;
+    color: #111;
+    margin-bottom: 6px;
   }
 
   .header p {
-    font-size: 1.15rem;
-    color: #888;
+    font-size: 1.02rem;
+    color: #666;
     font-weight: normal;
     font-style: italic;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
 
   .bio {
-    font-size: 1.05rem;
-    color: #5a6478;
+    font-size: 1rem;
+    color: #4b5563;
     font-weight: normal;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-    margin-top: 6px;
+    margin-top: 4px;
   }
 
   .bio-link {
-    color: #2a6cb8;
+    color: #111;
     text-decoration: none;
-    border-bottom: 1px solid rgba(42, 108, 184, 0.3);
-    transition: border-color 0.2s ease;
+    border-bottom: 1px solid #b8bcc3;
+    transition: border-color 0.2s ease, color 0.2s ease;
   }
 
   .bio-link:hover {
-    border-bottom-color: #2a6cb8;
+    border-bottom-color: #111;
   }
 
   .accent-line {
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, #c0392b, #2a6cb8);
+    width: 56px;
+    height: 1px;
+    background: #d6d9df;
     border-radius: 2px;
-    margin: 16px auto 0;
+    margin: 14px auto 0;
   }
 
-  .table-container {
+  .columns {
     width: 100%;
-    max-width: 750px;
+    max-width: 980px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .panel {
     background: #ffffff;
-    border: 1px solid #e2e6ee;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(30, 60, 120, 0.06), 0 1px 4px rgba(0,0,0,0.03);
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-  }
-
-  thead th {
-    text-align: left;
-    padding: 16px 24px;
-    font-size: 0.8rem;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #9aa3b3;
-    border-bottom: 1px solid #eef0f5;
-    background: #fbfcfe;
-    font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-  }
-
-  tbody tr {
-    transition: background 0.2s ease;
-    cursor: pointer;
-  }
-
-  tbody tr:hover {
-    background: #f0f4fa;
-  }
-
-  tbody tr:not(:last-child) td {
-    border-bottom: 1px solid #f0f2f7;
-  }
-
-  tbody td {
-    padding: 20px 24px;
-    font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-  }
-
-  .project-name {
-    font-weight: normal;
-    font-size: 1.08rem;
-    color: #1e2a40;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-  }
-
-  .project-name .icon {
-    width: 36px;
-    height: 36px;
+    border: 1px solid #e5e7eb;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 14px 18px;
     font-size: 0.95rem;
-    flex-shrink: 0;
+    color: #111;
+    border-bottom: 1px solid #eceef1;
+    background: #fff;
+  }
+
+  .panel-list {
+    max-height: 360px;
+    overflow-y: auto;
+  }
+
+  .project-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 62%);
+    align-items: flex-start;
+    column-gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    padding: 14px 22px;
+    border-bottom: 1px solid #f0f1f3;
+    transition: background 0.2s ease;
+  }
+
+  .project-row:last-child {
+    border-bottom: none;
+  }
+
+  .project-row:hover {
+    background: #f9fafb;
   }
 
   .project-desc {
-    font-size: 0.92rem;
-    color: #7a8399;
+    overflow: hidden;
+    white-space: normal;
+    line-height: 1.35;
+    font-size: 0.9rem;
+    color: #666;
     font-weight: normal;
+    font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
+    text-align: right;
+    opacity: 0;
+    transform: translateX(12px);
+    transition: opacity 0.24s ease, transform 0.28s ease;
+    pointer-events: none;
+  }
+
+  .project-row:hover .project-desc {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .project-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-weight: normal;
+    font-size: 1.14rem;
+    color: #111;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
 
-  .visit-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: normal;
-    font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
-    padding: 7px 16px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #c0392b, #2a6cb8);
-    border: none;
-    transition: all 0.25s ease;
-    box-shadow: 0 2px 8px rgba(42, 108, 184, 0.18);
-  }
-
-  .visit-link:hover {
-    box-shadow: 0 4px 14px rgba(42, 108, 184, 0.3);
-    transform: translateY(-1px);
-  }
-
-  .visit-link svg {
-    width: 14px;
-    height: 14px;
-    transition: transform 0.2s ease;
-  }
-
-  tbody tr:hover .visit-link svg {
-    transform: translateX(2px);
+  @media (max-width: 820px) {
+    .columns {
+      grid-template-columns: 1fr;
+    }
   }
 
   .footer {
-    margin-top: 40px;
-    color: #b0b8c8;
+    margin-top: 22px;
+    color: #9aa1ac;
     font-size: 0.85rem;
     font-family: "Computer Modern Serif", "CMU Serif", "Latin Modern Roman", Georgia, serif;
   }
 
-  /* Color themes for icons */
-  .bg-red  { background: rgba(192, 57, 43, 0.1); color: #c0392b; }
-  .bg-blue { background: rgba(42, 108, 184, 0.1); color: #2a6cb8; }
-  .bg-teal { background: rgba(22, 160, 133, 0.1); color: #16a085; }
-  .bg-navy { background: rgba(26, 58, 110, 0.1);  color: #1a3a6e; }
 </style>
 </head>
 <body>
@@ -195,54 +166,18 @@
   <h1>Konstantin Leyde</h1>
   <p class="bio">Flatiron Research Fellow at the <a href="https://www.simonsfoundation.org/people/konstantin-leyde/" target="_blank" class="bio-link">Center for Computational Astrophysics</a>, New York</p>
   <div class="accent-line"></div>
-  <p style="margin-top:20px; font-style:italic; color:#888; font-size:1.05rem;">Projects & Websites</p>
 </div>
 
-<div class="table-container">
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3" style="font-size:0.95rem; color:#1a3a6e; letter-spacing:0; text-transform:none; padding-bottom:10px;">Websites</th>
-      </tr>
-      <tr>
-        <th>Project</th>
-        <th>Description</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody id="websites-table">
-    </tbody>
-  </table>
+<div class="columns">
+  <section class="panel">
+    <div class="panel-header">Websites</div>
+    <div id="websites-list" class="panel-list"></div>
+  </section>
 
-  <table style="margin-top:8px;">
-    <thead>
-      <tr>
-        <th colspan="3" style="font-size:0.95rem; color:#1a3a6e; letter-spacing:0; text-transform:none; padding-bottom:10px; border-top:1px solid #eef0f5;">Repositories</th>
-      </tr>
-      <tr>
-        <th>Project</th>
-        <th>Description</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody id="repos-table">
-    </tbody>
-  </table>
-
-  <table style="margin-top:8px;">
-    <thead>
-      <tr>
-        <th colspan="3" style="font-size:0.95rem; color:#1a3a6e; letter-spacing:0; text-transform:none; padding-bottom:10px; border-top:1px solid #eef0f5;">Links</th>
-      </tr>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody id="links-table">
-    </tbody>
-  </table>
+  <section class="panel">
+    <div class="panel-header">Repositories</div>
+    <div id="repos-list" class="panel-list"></div>
+  </section>
 </div>
 
 <div class="footer">
@@ -257,16 +192,12 @@
     {
       name: "GWTC-4 Catalog",
       description: "Gravitational-wave transient catalog browser",
-      url: "https://konstantinleyde.github.io/website_gwtc_4_catalog/",
-      icon: "🌌",
-      color: "bg-navy"
+      url: "https://konstantinleyde.github.io/website_gwtc_4_catalog/"
     },
     {
       name: "Cholesky Decomposition",
       description: "Interactive visualization of Cholesky decomposition",
-      url: "https://konstantinleyde.github.io/choleski-decomposition-visualization/",
-      icon: "📐",
-      color: "bg-red"
+      url: "https://konstantinleyde.github.io/choleski-decomposition-visualization/"
     },
   ];
 
@@ -274,52 +205,27 @@
     {
       name: "light",
       description: "Bayesian reconstruction of the galaxy field for gravitational-wave cosmology",
-      url: "https://github.com/KonstantinLeyde/light",
-      icon: "🌀",
-      color: "bg-blue"
+      url: "https://github.com/KonstantinLeyde/light"
     },
   ];
 
-  const links = [
-    // Add external links here:
-    // {
-    //   name: "Example",
-    //   description: "Description",
-    //   url: "https://example.com",
-    //   icon: "🔗",
-    //   color: "bg-teal"
-    // },
-  ];
-
-  function populateTable(tableId, items) {
-    const tbody = document.getElementById(tableId);
+  function populateList(listId, items) {
+    const list = document.getElementById(listId);
     items.forEach(p => {
-      const tr = document.createElement("tr");
-      tr.onclick = () => window.open(p.url, "_blank");
-      tr.innerHTML = `
-        <td>
-          <div class="project-name">
-            <div class="icon ${p.color}">${p.icon}</div>
-            ${p.name}
-          </div>
-        </td>
-        <td class="project-desc">${p.description}</td>
-        <td style="text-align:right">
-          <a href="${p.url}" target="_blank" class="visit-link" onclick="event.stopPropagation()">
-            Visit
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-            </svg>
-          </a>
-        </td>
+      const row = document.createElement("a");
+      row.href = p.url;
+      row.target = "_blank";
+      row.className = "project-row";
+      row.innerHTML = `
+        <span class="project-name">${p.name}</span>
+        <span class="project-desc">${p.description}</span>
       `;
-      tbody.appendChild(tr);
+      list.appendChild(row);
     });
   }
 
-  populateTable("websites-table", websites);
-  populateTable("repos-table", repos);
-  populateTable("links-table", links);
+  populateList("websites-list", websites);
+  populateList("repos-list", repos);
 </script>
 </body>
 </html>
